@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="List.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="ListNodeIterator.h" />
   </ItemGroup>

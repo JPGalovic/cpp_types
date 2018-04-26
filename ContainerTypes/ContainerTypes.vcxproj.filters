@@ -24,5 +24,8 @@
     <ClInclude Include="ListNodeIterator.h">
       <Filter>Header Files\List</Filter>
     </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
