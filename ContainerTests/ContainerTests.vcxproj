@@ -118,11 +118,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ListNodeTests.cpp" />
+    <ClCompile Include="ListTests.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNodeTests.h" />
+    <ClInclude Include="ListTests.h" />
     <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

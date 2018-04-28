@@ -36,12 +36,18 @@
     <ClCompile Include="ListNodeTests.cpp">
       <Filter>Source Files\List Tests</Filter>
     </ClCompile>
+    <ClCompile Include="ListTests.cpp">
+      <Filter>Source Files\List Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h">
       <Filter>Resource Files\Test Loaders</Filter>
     </ClInclude>
     <ClInclude Include="ListNodeTests.h">
+      <Filter>Resource Files\List Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ListTests.h">
       <Filter>Resource Files\List Tests</Filter>
     </ClInclude>
   </ItemGroup>

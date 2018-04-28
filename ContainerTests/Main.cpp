@@ -14,6 +14,7 @@ int main(int argc, char ** argv)
 
 	// List Tests
 	testListNodes();
+	testLists();
 
 	return 0;
 }

@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #include "ListNodeTests.h"
+#include "ListTests.h"
 
 /**
  * Tests avalible console handle settings.
@@ -32,10 +33,12 @@ void testListNodes()
 {
 	ListNodeTests::testAppend();
 	ListNodeTests::testPrepend();
+}
 
-
-	/*ListNodeTests lTester;
-
-	lTester.testAppend();
-	lTester.testPrepend();*/
+void testLists()
+{
+	ListTests::testPushFront();
+	ListTests::testPushBack();
+	ListTests::testRemove();
+	ListTests::testArraySubscriptOperator();
 }

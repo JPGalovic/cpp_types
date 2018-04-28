@@ -64,7 +64,7 @@ namespace Container
 
 		fRightmost = &aList;
 
-		while (&fLeftmost->getNext() != nullptr)
+		while (&fRightmost->getNext() != nullptr)
 			fRightmost = &fRightmost->getNext();
 	}
 
@@ -95,7 +95,7 @@ namespace Container
 		case DATA:
 			fCurrent = &fCurrent->getNext();
 			if (fCurrent == nullptr)
-				fCurrent = AFTER;
+				fState = AFTER;
 		default:
 			break;
 		}
@@ -179,8 +179,8 @@ namespace Container
 	{
 		ListNodeIterator<T> lTemp = *this;
 
-		lTemp.fCurrent == nullptr;
-		lTemp.fState == BEFORE;
+		lTemp.fCurrent = nullptr;
+		lTemp.fState = BEFORE;
 
 		return lTemp;
 	}
@@ -214,8 +214,8 @@ namespace Container
 	{
 		ListNodeIterator<T> lTemp = *this;
 
-		lTemp.fCurrent == nullptr;
-		lTemp.fState == AFTER;
+		lTemp.fCurrent = nullptr;
+		lTemp.fState = AFTER;
 
 		return lTemp;
 	}

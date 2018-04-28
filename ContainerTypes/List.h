@@ -154,7 +154,7 @@ namespace Container
 		while (aIndex)
 		{
 			aIndex--;
-			lNode = (ListNode<T>*) lNode->getNext();
+			lNode = (ListNode<T>*) &lNode->getNext();
 		}
 
 		return lNode->getValue();
@@ -258,7 +258,7 @@ namespace Container
 		{
 			if (lNode->getValue() == aElement)
 				break;
-			lNode = (ListNode<T>*)
+			lNode = (ListNode<T>*)&lNode->getNext();
 		}
 
 		if (lNode != nullptr)

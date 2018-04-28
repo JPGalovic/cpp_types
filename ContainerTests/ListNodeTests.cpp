@@ -110,11 +110,11 @@ void ListNodeTests::testPrepend()
 	StringNode N4(S4);
 
 	SetConsoleTextAttribute(hConsole, 2);
-	std::cout << "Appending N4 with N1." << std::endl;
+	std::cout << "Prepending N4 with N1." << std::endl;
 	N4.prepend(N1);
-	std::cout << "Appending N4 with N2." << std::endl;
+	std::cout << "Prepending N4 with N2." << std::endl;
 	N4.prepend(N2);
-	std::cout << "Appending N4 with N3." << std::endl;
+	std::cout << "Prepending N4 with N3." << std::endl;
 	N4.prepend(N3);
 
 	SetConsoleTextAttribute(hConsole, 11);
