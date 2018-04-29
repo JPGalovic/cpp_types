@@ -7,14 +7,19 @@
  */
 
 #include "Tests.h"
+#include <iostream>
 
 int main(int argc, char ** argv)
 {
-	consoleHandleTest();
+	bool lClearFlag = false;
+	bool lPauseFlag = false;
+	consoleHandleTest(lClearFlag, lPauseFlag);
 
 	// List Tests
-	testListNodes();
-	testLists();
+	testListNodes(lClearFlag, lPauseFlag);
+	testLists(lClearFlag, lPauseFlag);
 
+	if (!lPauseFlag)
+		system("PAUSE");
 	return 0;
 }

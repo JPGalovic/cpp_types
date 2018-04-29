@@ -120,11 +120,13 @@
     <ClCompile Include="ListNodeTests.cpp" />
     <ClCompile Include="ListTests.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNodeTests.h" />
     <ClInclude Include="ListTests.h" />
+    <ClInclude Include="Misc.h" />
     <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

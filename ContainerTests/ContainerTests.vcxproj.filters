@@ -25,6 +25,9 @@
     <Filter Include="Source Files\List Tests">
       <UniqueIdentifier>{90184eee-c79c-4738-bc6c-0664a6a3548d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Dictionary Tests">
+      <UniqueIdentifier>{6e911ae5-da02-4f73-8d22-9020ec8238fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="ListTests.cpp">
       <Filter>Source Files\List Tests</Filter>
     </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="ListTests.h">
       <Filter>Resource Files\List Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

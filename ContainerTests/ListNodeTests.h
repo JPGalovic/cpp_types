@@ -7,6 +7,6 @@
 class ListNodeTests
 {
 public:
-	static void testAppend();
-	static void testPrepend();
+	static void testAppend(bool aClearFlag, bool aPauseFlag);
+	static void testPrepend(bool aClearFlag, bool aPauseFlag);
 };

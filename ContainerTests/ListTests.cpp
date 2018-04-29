@@ -5,14 +5,12 @@
 #include <Windows.h>
 
 #include "List.h"
+#include "Misc.h"
 
-void ListTests::testPushFront()
+void ListTests::testPushFront(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: List.PushFront()." << std::endl << std::endl;
+	TestSuite::BeginTest("List, Push Front", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List:" << std::endl;
@@ -45,18 +43,13 @@ void ListTests::testPushFront()
 	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
 		std::cout << *iter << std::endl;
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
 
-void ListTests::testPushBack()
+void ListTests::testPushBack(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: List.PushBack()." << std::endl << std::endl;
+	TestSuite::BeginTest("List, Push Back", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List:" << std::endl;
@@ -89,18 +82,13 @@ void ListTests::testPushBack()
 	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
 		std::cout << *iter << std::endl;
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
 
-void ListTests::testRemove()
+void ListTests::testRemove(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: List.Remove()." << std::endl << std::endl;
+	TestSuite::BeginTest("List, Remove", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List:" << std::endl;
@@ -152,18 +140,13 @@ void ListTests::testRemove()
 	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
 		std::cout << *iter << std::endl;
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
 
-void ListTests::testArraySubscriptOperator()
+void ListTests::testArraySubscriptOperator(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: List.Operator[]." << std::endl << std::endl;
+	TestSuite::BeginTest("List, Array Subscript Operator", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List:" << std::endl;
@@ -201,8 +184,5 @@ void ListTests::testArraySubscriptOperator()
 		std::cout << lList[i] << std::endl;
 	}
 		
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }

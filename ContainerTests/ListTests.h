@@ -7,8 +7,8 @@
 class ListTests
 {
 public:
-	static void testPushFront();
-	static void testPushBack();
-	static void testRemove();
-	static void testArraySubscriptOperator();
+	static void testPushFront(bool aClearFlag, bool aPauseFlag);
+	static void testPushBack(bool aClearFlag, bool aPauseFlag);
+	static void testRemove(bool aClearFlag, bool aPauseFlag);
+	static void testArraySubscriptOperator(bool aClearFlag, bool aPauseFlag);
 };

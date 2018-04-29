@@ -5,18 +5,16 @@
 
 #include "ListNodeTests.h"
 #include "ListTests.h"
+#include "Misc.h"
 
 /**
  * Tests avalible console handle settings.
  */
-void consoleHandleTest()
+void consoleHandleTest(bool aClearFlag, bool aPauseFlag)
 {
 	// Console Handle Settings
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: SetConsoleTextAttribute()." << std::endl << std::endl;
+	TestSuite::BeginTest("Console Text Attribute", aClearFlag);
 
 	for (int i = 0; i < 256; i++)
 	{
@@ -24,21 +22,19 @@ void consoleHandleTest()
 		std::cout << "Console Atribute #" << i << ". The quick brown fox jumped over the lazy dog." << std::endl;
 	}
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
 
-void testListNodes()
+void testListNodes(bool aClearFlag, bool aPauseFlag)
 {
-	ListNodeTests::testAppend();
-	ListNodeTests::testPrepend();
+	ListNodeTests::testAppend(aClearFlag, aPauseFlag);
+	ListNodeTests::testPrepend(aClearFlag, aPauseFlag);
 }
 
-void testLists()
+void testLists(bool aClearFlag, bool aPauseFlag)
 {
-	ListTests::testPushFront();
-	ListTests::testPushBack();
-	ListTests::testRemove();
-	ListTests::testArraySubscriptOperator();
+	ListTests::testPushFront(aClearFlag, aPauseFlag);
+	ListTests::testPushBack(aClearFlag, aPauseFlag);
+	ListTests::testRemove(aClearFlag, aPauseFlag);
+	ListTests::testArraySubscriptOperator(aClearFlag, aPauseFlag);
 }

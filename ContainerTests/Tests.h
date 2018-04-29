@@ -1,6 +1,6 @@
 #pragma once
 
-void consoleHandleTest();
+void consoleHandleTest(bool aClearFlag, bool aPauseFlag);
 
-void testListNodes();
-void testLists();
+void testListNodes(bool aClearFlag, bool aPauseFlag);
+void testLists(bool aClearFlag, bool aPauseFlag);

@@ -4,17 +4,15 @@
 #include <Windows.h>
 
 #include "ListNode.h"
+#include "Misc.h"
 
 /** 
  * Tests Append List Item
  */
-void ListNodeTests::testAppend()
+void ListNodeTests::testAppend(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: ListNode.Append()." << std::endl << std::endl;
+	TestSuite::BeginTest("ListNode, Append", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List (From Nodes):" << std::endl;
@@ -82,18 +80,13 @@ void ListNodeTests::testAppend()
 		std::cout << ")" << std::endl;
 	}
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
 
-void ListNodeTests::testPrepend()
+void ListNodeTests::testPrepend(bool aClearFlag, bool aPauseFlag)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("CLS");
-
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << "Testing: ListNode.Prepend()." << std::endl << std::endl;
+	TestSuite::BeginTest("ListNode, Prepend", aClearFlag);
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Build List (From Nodes):" << std::endl;
@@ -161,7 +154,5 @@ void ListNodeTests::testPrepend()
 		std::cout << ")" << std::endl;
 	}
 
-	SetConsoleTextAttribute(hConsole, 10);
-	std::cout << std::endl << std::endl << "Testing: Complete, please check results are as expected." << std::endl;
-	system("PAUSE");
+	TestSuite::EndTest(aPauseFlag);
 }
