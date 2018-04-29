@@ -44,42 +44,7 @@ void ListNodeTests::testAppend(bool aClearFlag, bool aPauseFlag)
 	std::cout << "Display Nodes:" << std::endl;
 
 	for (const StringNode* PN = &N1; PN != nullptr; PN = &PN->getNext())
-	{
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << "(";
-
-		if (&PN->getPrevious() == nullptr)
-		{
-			SetConsoleTextAttribute(hConsole, 12);
-			std::cout << "<NULL>";
-		}
-		else
-		{
-			SetConsoleTextAttribute(hConsole, 15);
-			std::cout << PN->getPrevious().getValue();
-		}
-
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ", ";
-		SetConsoleTextAttribute(hConsole, 15);
-		std::cout << PN->getValue();
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ", ";
-
-		if (&PN->getNext() == nullptr)
-		{
-			SetConsoleTextAttribute(hConsole, 12);
-			std::cout << "<NULL>";
-		}
-		else
-		{
-			SetConsoleTextAttribute(hConsole, 15);
-			std::cout << PN->getNext().getValue();
-		}
-
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ")" << std::endl;
-	}
+			std::cout << *PN << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
 }
@@ -118,42 +83,7 @@ void ListNodeTests::testPrepend(bool aClearFlag, bool aPauseFlag)
 	std::cout << "Display Nodes:" << std::endl;
 
 	for (const StringNode* PN = &N1; PN != nullptr; PN = &PN->getNext())
-	{
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << "(";
-
-		if (&PN->getPrevious() == nullptr)
-		{
-			SetConsoleTextAttribute(hConsole, 12);
-			std::cout << "<NULL>";
-		}
-		else
-		{
-			SetConsoleTextAttribute(hConsole, 15);
-			std::cout << PN->getPrevious().getValue();
-		}
-
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ", ";
-		SetConsoleTextAttribute(hConsole, 15);
-		std::cout << PN->getValue();
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ", ";
-
-		if (&PN->getNext() == nullptr)
-		{
-			SetConsoleTextAttribute(hConsole, 12);
-			std::cout << "<NULL>";
-		}
-		else
-		{
-			SetConsoleTextAttribute(hConsole, 15);
-			std::cout << PN->getNext().getValue();
-		}
-
-		SetConsoleTextAttribute(hConsole, 14);
-		std::cout << ")" << std::endl;
-	}
+		std::cout << *PN << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
 }

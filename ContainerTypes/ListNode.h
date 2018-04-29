@@ -7,6 +7,9 @@
  * @date    24-04-2018
  */
 
+#include <iostream>
+#include <Windows.h>
+
 namespace Container
 {
 	template<class T>
@@ -32,6 +35,47 @@ namespace Container
 		void remove();
 
 		void setValue(const T& aValue);
+
+		friend std::ostream& operator<<(std::ostream& aOStream, const ListNode<T>& aListNode)
+		{
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << "(";
+
+			if (&aListNode.getPrevious() == nullptr)
+			{
+				SetConsoleTextAttribute(hConsole, 12);
+				aOStream << "<NULL>";
+			}
+			else
+			{
+				SetConsoleTextAttribute(hConsole, 15);
+				aOStream << aListNode.getPrevious().getValue();
+			}
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << ", ";
+			SetConsoleTextAttribute(hConsole, 15);
+			aOStream << aListNode.getValue();
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << ", ";
+
+			if (&aListNode.getNext() == nullptr)
+			{
+				SetConsoleTextAttribute(hConsole, 12);
+				aOStream << "<NULL>";
+			}
+			else
+			{
+				SetConsoleTextAttribute(hConsole, 15);
+				aOStream << aListNode.getNext().getValue();
+			}
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << ")";
+
+			return aOStream;
+		}
 	};
 
 	/**
