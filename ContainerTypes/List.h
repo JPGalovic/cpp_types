@@ -3,13 +3,14 @@
  * Doubly Linked List, defines the template for lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.0.4
+ * @version v1.1.0
  * @date    26-04-2018
  */
 
 #include "ListNodeIterator.h"
 
 #include <stdexcept>
+#include <Windows.h>
 
 namespace Container
 {
@@ -47,6 +48,39 @@ namespace Container
 
 		void remove(const T& aElement);
 		void removeAt(unsigned int aIndex);
+
+		// Misc
+		friend std::ostream& operator<<(std::ostream& aOStream, const List<T> & aList)
+		{
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			SetConsoleTextAttribute(hConsole, 2);
+			aOStream << "List contains " << aList.size() << " Elements." << std::endl;
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << "{";
+
+			bool lFirst = true;
+
+			for (ListNodeIterator<T> lIter = aList.getIterator(); lIter != lIter.rightEnd(); lIter++)
+			{
+				if (!lFirst)
+				{
+					SetConsoleTextAttribute(hConsole, 14);
+					aOStream << ", ";
+				}
+				else
+					lFirst = false;
+				
+
+				SetConsoleTextAttribute(hConsole, 15);
+				aOStream << *lIter;
+			}
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << "}";
+			SetConsoleTextAttribute(hConsole, 15);
+			return aOStream;
+		}
 	};
 
 	/**

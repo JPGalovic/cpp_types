@@ -3,8 +3,8 @@
  * Doubly Linked List Node, defines the template for nodes used in lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.0.4
- * @date    24-04-2018
+ * @version v1.1.0
+ * @date    30-04-2018
  */
 
 #include <iostream>
@@ -73,7 +73,7 @@ namespace Container
 
 			SetConsoleTextAttribute(hConsole, 14);
 			aOStream << ")";
-
+			SetConsoleTextAttribute(hConsole, 15);
 			return aOStream;
 		}
 	};

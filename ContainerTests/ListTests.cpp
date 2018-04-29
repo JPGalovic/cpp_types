@@ -36,12 +36,7 @@ void ListTests::testPushFront(bool aClearFlag, bool aPauseFlag)
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display List:" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "Top to bottom: " << lList.size() << " elements." << std::endl;
-	SetConsoleTextAttribute(hConsole, 15);
-	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
-		std::cout << *iter << std::endl;
+	std::cout << lList << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
 }
@@ -75,12 +70,7 @@ void ListTests::testPushBack(bool aClearFlag, bool aPauseFlag)
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display List:" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "Top to bottom: " << lList.size() << " elements." << std::endl;
-	SetConsoleTextAttribute(hConsole, 15);
-	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
-		std::cout << *iter << std::endl;
+	std::cout << lList << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
 }
@@ -114,12 +104,7 @@ void ListTests::testRemove(bool aClearFlag, bool aPauseFlag)
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display List:" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "Top to bottom: " << lList.size() << " elements." << std::endl;
-	SetConsoleTextAttribute(hConsole, 15);
-	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
-		std::cout << *iter << std::endl;
+	std::cout << lList << std::endl;
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << std::endl << std::endl << "Remove Element from List:" << std::endl;
@@ -133,12 +118,7 @@ void ListTests::testRemove(bool aClearFlag, bool aPauseFlag)
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display List:" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "Top to bottom: " << lList.size() << " elements." << std::endl;
-	SetConsoleTextAttribute(hConsole, 15);
-	for (Container::ListNodeIterator<std::string> iter = lList.getIterator(); iter != iter.rightEnd(); iter++)
-		std::cout << *iter << std::endl;
+	std::cout << lList << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
 }
