@@ -2,8 +2,6 @@
 
 #include "ListNode.h"
 
-#include <string>
-
 class ListTests
 {
 public:

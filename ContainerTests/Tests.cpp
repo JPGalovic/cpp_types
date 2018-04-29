@@ -5,6 +5,7 @@
 
 #include "ListNodeTests.h"
 #include "ListTests.h"
+#include "PairTests.h"
 #include "Misc.h"
 
 /**
@@ -37,4 +38,9 @@ void testLists(bool aClearFlag, bool aPauseFlag)
 	ListTests::testPushBack(aClearFlag, aPauseFlag);
 	ListTests::testRemove(aClearFlag, aPauseFlag);
 	ListTests::testArraySubscriptOperator(aClearFlag, aPauseFlag);
+}
+
+void testPairs(bool aClearFlag, bool aPauseFlag)
+{
+	PairTests::testBasicValues(aClearFlag, aPauseFlag);
 }

@@ -1,7 +1,7 @@
 #include "ListTests.h"
 
-#include <string>
 #include <iostream>
+#include <string>
 #include <Windows.h>
 
 #include "List.h"

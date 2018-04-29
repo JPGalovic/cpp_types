@@ -19,6 +19,9 @@ int main(int argc, char ** argv)
 	testListNodes(lClearFlag, lPauseFlag);
 	testLists(lClearFlag, lPauseFlag);
 
+	// Dictionary Tests
+	testPairs(lClearFlag, lPauseFlag);
+
 	if (!lPauseFlag)
 		system("PAUSE");
 	return 0;
