@@ -51,6 +51,9 @@
     <ClCompile Include="PairTests.cpp">
       <Filter>Source Files\Dictionary Tests</Filter>
     </ClCompile>
+    <ClCompile Include="DictionaryTests.cpp">
+      <Filter>Source Files\Dictionary Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Misc.h">
       <Filter>Resource Files\Test Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="DictionaryTests.h">
+      <Filter>Resource Files\Dictionary Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -25,7 +25,6 @@ namespace Container
 
 	public:
 		// Construction and Destruction
-		Dictionary();
 
 		// Getters
 		const DATA & getValue(const KEY & aKey) const;
@@ -35,7 +34,7 @@ namespace Container
 		const List<Pair<KEY, DATA>> & getDataList() const;
 
 		// Setters
-		void addItem(const KEY & aKey, const ITEM & aValue);
+		void addItem(const KEY & aKey, const DATA & aValue);
 		void removeValue(const KEY & aKey);
 
 		// Misc
@@ -61,15 +60,6 @@ namespace Container
 			if (fLookup[i].getA() == aKey)
 				return fLookup[i];
 		throw std::runtime_error("Key not found.");
-	}
-
-	/**
-	 * Class Constructor.
-	 */
-	template<class KEY, class DATA>
-	inline Dictionary<KEY, DATA>::Dictionary()
-	{
-		fLookup = List<Pair<KEY, DATA>>();
 	}
 
 	/**
@@ -116,11 +106,11 @@ namespace Container
 	 * @param aValue, value of item to add.
 	 */
 	template<class KEY, class DATA>
-	inline void Dictionary<KEY, DATA>::addItem(const KEY & aKey, const ITEM & aValue)
+	inline void Dictionary<KEY, DATA>::addItem(const KEY & aKey, const DATA & aValue)
 	{
 		if (hasKey(aKey))
 			throw std::runtime_error("Key alredy in dictionary.");
-		fLookup.add(Pair<KEY, DATA>(aKey, aItem));
+		fLookup.add(Pair<KEY, DATA>(aKey, aValue));
 	}
 
 	/**

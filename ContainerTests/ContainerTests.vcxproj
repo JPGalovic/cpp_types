@@ -117,6 +117,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DictionaryTests.cpp" />
     <ClCompile Include="ListNodeTests.cpp" />
     <ClCompile Include="ListTests.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -125,6 +126,7 @@
     <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DictionaryTests.h" />
     <ClInclude Include="ListNodeTests.h" />
     <ClInclude Include="ListTests.h" />
     <ClInclude Include="Misc.h" />

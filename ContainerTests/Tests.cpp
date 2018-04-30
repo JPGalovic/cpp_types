@@ -6,6 +6,7 @@
 #include "ListNodeTests.h"
 #include "ListTests.h"
 #include "PairTests.h"
+#include "DictionaryTests.h"
 #include "Misc.h"
 
 /**
@@ -43,4 +44,11 @@ void testLists(bool aClearFlag, bool aPauseFlag)
 void testPairs(bool aClearFlag, bool aPauseFlag)
 {
 	PairTests::testBasicValues(aClearFlag, aPauseFlag);
+}
+
+void testDictionaries(bool aClearFlag, bool aPauseFlag)
+{
+	DictionaryTests::testAddElements(aClearFlag, aPauseFlag);
+	DictionaryTests::testRemoveElements(aClearFlag, aPauseFlag);
+	DictionaryTests::testGetValue(aClearFlag, aPauseFlag);
 }

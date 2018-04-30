@@ -21,6 +21,7 @@ int main(int argc, char ** argv)
 
 	// Dictionary Tests
 	testPairs(lClearFlag, lPauseFlag);
+	testDictionaries(lClearFlag, lPauseFlag);
 
 	if (!lPauseFlag)
 		system("PAUSE");
