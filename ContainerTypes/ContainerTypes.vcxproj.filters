@@ -33,5 +33,8 @@
     <ClInclude Include="Pair.h">
       <Filter>Header Files\Dictionary</Filter>
     </ClInclude>
+    <ClInclude Include="Dictionary.h">
+      <Filter>Header Files\Dictionary</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
