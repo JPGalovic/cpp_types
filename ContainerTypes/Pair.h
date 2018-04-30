@@ -6,6 +6,9 @@
  * @date    28-04-2018
  */
 
+#include <iostream>
+#include <Windows.h>
+
 namespace Container
 {
 	template<class A, class B>
@@ -30,6 +33,28 @@ namespace Container
 		// Setters
 		void setA(const A & aA);
 		void setB(const B & aB);
+
+		// Misc
+		friend std::ostream& operator<<(std::ostream& aOStream, const Pair<A, B> & aList)
+		{
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << "[";
+
+			SetConsoleTextAttribute(hConsole, 15);
+			aOStream << aList.getA();
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << ", ";
+
+			SetConsoleTextAttribute(hConsole, 15);
+			aOStream << aList.getB();
+
+			SetConsoleTextAttribute(hConsole, 14);
+			aOStream << "]";
+			SetConsoleTextAttribute(hConsole, 15);
+			return aOStream;
+		}
 	};
 
 	/**

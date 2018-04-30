@@ -26,21 +26,7 @@ void PairTests::testBasicValues(bool aClearFlag, bool aPauseFlag)
 
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display Pair:" << std::endl;
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "[";
-
-	SetConsoleTextAttribute(hConsole, 15);
-	std::cout << P1.getA();
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << ", ";
-
-	SetConsoleTextAttribute(hConsole, 15);
-	std::cout << P1.getB();
-
-	SetConsoleTextAttribute(hConsole, 14);
-	std::cout << "]";
+	std::cout << P1;
 
 	TestSuite::EndTest(aPauseFlag);
 }
