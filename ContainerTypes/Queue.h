@@ -31,6 +31,19 @@ namespace Container
 		// Setters
 		void enqueue(const T& aElement);
 		void dequeue();
+
+		// Misc
+		friend std::ostream& operator<<(std::ostream & aOstream, const Queue<T> & aQueue)
+		{
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			SetConsoleTextAttribute(hConsole, 2);
+			aOstream << "Queue contains " << aQueue.size() << " Elements." << std::endl;
+
+			
+
+			SetConsoleTextAttribute(hConsole, 15);
+			return aOstream;
+		}
 	};
 
 	/**
