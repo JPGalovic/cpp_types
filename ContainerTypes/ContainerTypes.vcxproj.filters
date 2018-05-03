@@ -19,6 +19,15 @@
     <Filter Include="Header Files\Dictionary">
       <UniqueIdentifier>{4d47a1f3-a42f-4099-99b8-5a058aab7c2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{c96568c3-5a78-4d50-aadb-7a63057f1196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stack">
+      <UniqueIdentifier>{fdd79582-43f9-4bed-9e32-8d65aca98ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tree">
+      <UniqueIdentifier>{91910469-86a1-48f8-8e8d-ca5bfca4e5d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">

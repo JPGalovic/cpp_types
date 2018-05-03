@@ -34,7 +34,11 @@ namespace Container
 		List<T>& operator=(const List<T>& aOtherList);
 
 		bool isEmpty() const;
+		bool empty() const;
+
 		int size() const;
+		int count() const;
+		int length() const;
 
 		const T& getAt(unsigned int aIndex) const;
 		const T& operator[](unsigned int aIndex) const;
@@ -162,6 +166,16 @@ namespace Container
 	}
 
 	/**
+	 * Determines if list is empty.
+	 * @return true if list is empty.
+	 */
+	template<class T>
+	inline bool List<T>::empty() const
+	{
+		return isEmpty();
+	}
+
+	/**
 	 * Gets number of elements in list.
 	 * @return Size of list.
 	 */
@@ -169,6 +183,26 @@ namespace Container
 	inline int List<T>::size() const
 	{
 		return fCount;
+	}
+
+	/**
+	 * Gets number of elements in list.
+	 * @return Size of list.
+	 */
+	template<class T>
+	inline int List<T>::count() const
+	{
+		return size();
+	}
+
+	/**
+	 * Gets number of elements in list.
+	 * @return Size of list.
+	 */
+	template<class T>
+	inline int List<T>::length() const
+	{
+		return size();
 	}
 
 	/**
