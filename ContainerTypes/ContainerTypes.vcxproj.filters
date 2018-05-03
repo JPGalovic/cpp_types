@@ -45,5 +45,8 @@
     <ClInclude Include="Dictionary.h">
       <Filter>Header Files\Dictionary</Filter>
     </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

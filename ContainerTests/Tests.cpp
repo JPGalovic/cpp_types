@@ -39,6 +39,7 @@ void testLists(bool aClearFlag, bool aPauseFlag)
 	ListTests::testPushBack(aClearFlag, aPauseFlag);
 	ListTests::testRemove(aClearFlag, aPauseFlag);
 	ListTests::testArraySubscriptOperator(aClearFlag, aPauseFlag);
+	ListTests::testCopy(aClearFlag, aPauseFlag);
 }
 
 void testPairs(bool aClearFlag, bool aPauseFlag)

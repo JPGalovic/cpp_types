@@ -3,7 +3,7 @@
  * Doubly Linked List, defines the template for lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.1.0
+ * @version v1.1.2
  * @date    26-04-2018
  */
 

@@ -9,4 +9,5 @@ public:
 	static void testPushBack(bool aClearFlag, bool aPauseFlag);
 	static void testRemove(bool aClearFlag, bool aPauseFlag);
 	static void testArraySubscriptOperator(bool aClearFlag, bool aPauseFlag);
+	static void testCopy(bool aClearFlag, bool aPauseFlag);
 };
