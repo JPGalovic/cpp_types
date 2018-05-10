@@ -3,7 +3,7 @@
  * Doubly Linked List Node, defines the template for nodes used in lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.2.0
+ * @version v1.2.1
  * @date    10-05-2018
  */
 
@@ -20,16 +20,11 @@ namespace Container
 		ListNode<T>* fNext;
 		ListNode<T>* fPrevious;
 
-		ListNode()
-		{
-			fNext = &NIL;
-			fPrevious = &NIL;
-
-			fValue = T();
-		}
 	public:
 		// Construction and Destruction
 		static ListNode<T> NIL;
+
+		ListNode();
 		ListNode(const T& aValue);
 
 		// Getters
@@ -41,6 +36,7 @@ namespace Container
 		void prepend(ListNode<T>& aNode);
 		void append(ListNode<T>& aNode);
 		void remove();
+
 
 		void setValue(const T& aValue);
 
@@ -92,6 +88,18 @@ namespace Container
 	template<class T>
 	ListNode<T> ListNode<T>::NIL;
 
+
+	/**
+	 * Default Class Constructor.
+	 */
+	template<class T>
+	inline ListNode<T>::ListNode()
+	{
+		fValue = T();
+		fNext = &NIL;
+		fPrevious = &NIL;
+	}
+
 	/**
 	 * Class Constructor, Sets node with no next or previous connections
 	 * @param aValue, value to set node with.
@@ -99,16 +107,15 @@ namespace Container
 	template<class T>
 	inline ListNode<T>::ListNode(const T & aValue)
 	{
+		fValue = aValue;
 		fNext = &NIL;
 		fPrevious = &NIL;
-
-		fValue = aValue;
 	}
 
 	/**
-	* Gets value of node.
-	* @return refernce to value of node.
-	*/
+	 * Gets value of node.
+	 * @return refernce to value of node.
+	 */
 	template<class T>
 	inline const T & ListNode<T>::getValue() const
 	{

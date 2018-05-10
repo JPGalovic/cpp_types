@@ -13,8 +13,8 @@
 
 int main(int argc, char ** argv)
 {
-	bool lClearFlag = false;
-	bool lPauseFlag = false;
+	bool lClearFlag = true;
+	bool lPauseFlag = true;
 	consoleHandleTest(lClearFlag, lPauseFlag);
 
 	// List Tests
