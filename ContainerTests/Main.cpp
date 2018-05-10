@@ -7,6 +7,8 @@
  */
 
 #include "Tests.h"
+#include "Misc.h"
+
 #include <iostream>
 
 int main(int argc, char ** argv)
@@ -22,6 +24,12 @@ int main(int argc, char ** argv)
 	// Dictionary Tests
 	testPairs(lClearFlag, lPauseFlag);
 	testDictionaries(lClearFlag, lPauseFlag);
+
+	TestSuite::Assert::AreEqual(true, true, "T T");
+	TestSuite::Assert::AreEqual(true, false, "T F");
+
+	TestSuite::Assert::AreNotEqual(true, true, "T T");
+	TestSuite::Assert::AreNotEqual(true, false, "T F");
 
 	if (!lPauseFlag)
 		system("PAUSE");

@@ -3,8 +3,8 @@
  * Doubly Linked List Node, defines the template for nodes used in lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.1.0
- * @date    30-04-2018
+ * @version v1.2.0
+ * @date    10-05-2018
  */
 
 #include <iostream>
@@ -20,8 +20,16 @@ namespace Container
 		ListNode<T>* fNext;
 		ListNode<T>* fPrevious;
 
+		ListNode()
+		{
+			fNext = &NIL;
+			fPrevious = &NIL;
+
+			fValue = T();
+		}
 	public:
 		// Construction and Destruction
+		static ListNode<T> NIL;
 		ListNode(const T& aValue);
 
 		// Getters
@@ -42,7 +50,7 @@ namespace Container
 			SetConsoleTextAttribute(hConsole, 14);
 			aOStream << "(";
 
-			if (&aListNode.getPrevious() == nullptr)
+			if (&aListNode.getPrevious() == &NIL)
 			{
 				SetConsoleTextAttribute(hConsole, 12);
 				aOStream << "<NULL>";
@@ -60,7 +68,7 @@ namespace Container
 			SetConsoleTextAttribute(hConsole, 14);
 			aOStream << ", ";
 
-			if (&aListNode.getNext() == nullptr)
+			if (&aListNode.getNext() == &NIL)
 			{
 				SetConsoleTextAttribute(hConsole, 12);
 				aOStream << "<NULL>";
@@ -79,14 +87,20 @@ namespace Container
 	};
 
 	/**
-	* Class Constructor, Sets node with no next or previous connections
-	* @param aValue, value to set node with.
-	*/
+	 * Null Sentinal Definition
+	 */
+	template<class T>
+	ListNode<T> ListNode<T>::NIL;
+
+	/**
+	 * Class Constructor, Sets node with no next or previous connections
+	 * @param aValue, value to set node with.
+	 */
 	template<class T>
 	inline ListNode<T>::ListNode(const T & aValue)
 	{
-		fNext = nullptr;
-		fPrevious = nullptr;
+		fNext = &NIL;
+		fPrevious = &NIL;
 
 		fValue = aValue;
 	}
@@ -129,7 +143,7 @@ namespace Container
 	{
 		aNode.fNext = this;
 
-		if (fPrevious != nullptr) // If not start of list, insert on previous.
+		if (fPrevious != &NIL) // If not start of list, insert on previous.
 		{
 			aNode.fPrevious = fPrevious;
 			fPrevious->fNext = &aNode;
@@ -147,7 +161,7 @@ namespace Container
 	{
 		aNode.fPrevious = this;
 
-		if (fNext != nullptr)
+		if (fNext != &NIL)
 		{
 			aNode.fNext = fNext;
 			fNext->fPrevious = &aNode;
@@ -162,9 +176,9 @@ namespace Container
 	template<class T>
 	inline void ListNode<T>::remove()
 	{
-		if (fPrevious != nullptr)
+		if (fPrevious != &NIL)
 			fPrevious->fNext = fNext;
-		if (fNext != nullptr)
+		if (fNext != &NIL)
 			fNext->fPrevious = fPrevious;
 	}
 

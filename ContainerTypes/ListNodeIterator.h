@@ -3,7 +3,7 @@
  * Doubly Linked List Node Iterator, provides a means to transverse lists in an iterive manor.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.0.4
+ * @version v1.1.0
  * @date    25-04-2018
  */
 
@@ -52,19 +52,19 @@ namespace Container
 	{
 		fLeftmost = &aList;
 
-		while (&fLeftmost->getPrevious() != nullptr)
+		while (&fLeftmost->getPrevious() != &ListNode<T>::NIL)
 			fLeftmost = &fLeftmost->getPrevious();
 
 		fCurrent = fLeftmost;
 
-		if (fCurrent != nullptr)
+		if (fCurrent != &ListNode<T>::NIL)
 			fState = DATA;
 		else
 			fState = AFTER;
 
 		fRightmost = &aList;
 
-		while (&fRightmost->getNext() != nullptr)
+		while (&fRightmost->getNext() != &ListNode<T>::NIL)
 			fRightmost = &fRightmost->getNext();
 	}
 
@@ -87,14 +87,14 @@ namespace Container
 		{
 		case BEFORE:
 			fCurrent = fLeftmost;
-			if (fCurrent == nullptr)
+			if (fCurrent == &ListNode<T>::NIL)
 				fState = AFTER;
 			else
 				fState = DATA;
 			break;
 		case DATA:
 			fCurrent = &fCurrent->getNext();
-			if (fCurrent == nullptr)
+			if (fCurrent == &ListNode<T>::NIL)
 				fState = AFTER;
 		default:
 			break;
@@ -123,14 +123,14 @@ namespace Container
 		{
 		case AFTER:
 			fCurrent = fRightmost;
-			if (fCurrent == nullptr)
+			if (fCurrent == &ListNode<T>::NIL)
 				fState = BEFORE;
 			else
 				fState = DATA;
 			break;
 		case DATA:
 			fCurrent = &fCurrent->getPrevious();
-			if (fCurrent == nullptr)
+			if (fCurrent == &ListNode<T>::NIL)
 				fCurrent = BEFORE;
 		default:
 			break;
@@ -179,7 +179,7 @@ namespace Container
 	{
 		ListNodeIterator<T> lTemp = *this;
 
-		lTemp.fCurrent = nullptr;
+		lTemp.fCurrent = &ListNode<T>::NIL;
 		lTemp.fState = BEFORE;
 
 		return lTemp;
@@ -214,7 +214,7 @@ namespace Container
 	{
 		ListNodeIterator<T> lTemp = *this;
 
-		lTemp.fCurrent = nullptr;
+		lTemp.fCurrent = &ListNode<T>::NIL;
 		lTemp.fState = AFTER;
 
 		return lTemp;

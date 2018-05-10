@@ -16,20 +16,20 @@
     <Filter Include="Source Files\Test Loaders">
       <UniqueIdentifier>{bc0119b7-0c80-4b46-aed8-fadbb284b30f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Test Loaders">
-      <UniqueIdentifier>{277a5cef-2e53-4f02-bef5-d0bf5b7f4d5b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\List Tests">
-      <UniqueIdentifier>{149eeb87-ff2a-4fa2-bca3-d572bb136758}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\List Tests">
       <UniqueIdentifier>{90184eee-c79c-4738-bc6c-0664a6a3548d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Dictionary Tests">
-      <UniqueIdentifier>{6e911ae5-da02-4f73-8d22-9020ec8238fd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Dictionary Tests">
       <UniqueIdentifier>{566ccef0-daea-4111-a56a-f59502de93b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dictionary Tests">
+      <UniqueIdentifier>{6e911ae5-da02-4f73-8d22-9020ec8238fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\List Tests">
+      <UniqueIdentifier>{149eeb87-ff2a-4fa2-bca3-d572bb136758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Test Loaders">
+      <UniqueIdentifier>{277a5cef-2e53-4f02-bef5-d0bf5b7f4d5b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,22 +57,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h">
-      <Filter>Resource Files\Test Loaders</Filter>
+      <Filter>Header Files\Test Loaders</Filter>
     </ClInclude>
     <ClInclude Include="ListNodeTests.h">
-      <Filter>Resource Files\List Tests</Filter>
+      <Filter>Header Files\List Tests</Filter>
     </ClInclude>
     <ClInclude Include="ListTests.h">
-      <Filter>Resource Files\List Tests</Filter>
+      <Filter>Header Files\List Tests</Filter>
     </ClInclude>
     <ClInclude Include="PairTests.h">
-      <Filter>Resource Files\Dictionary Tests</Filter>
+      <Filter>Header Files\Dictionary Tests</Filter>
     </ClInclude>
     <ClInclude Include="Misc.h">
-      <Filter>Resource Files\Test Loaders</Filter>
+      <Filter>Header Files\Test Loaders</Filter>
     </ClInclude>
     <ClInclude Include="DictionaryTests.h">
-      <Filter>Resource Files\Dictionary Tests</Filter>
+      <Filter>Header Files\Dictionary Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

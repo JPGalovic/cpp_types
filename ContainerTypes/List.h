@@ -3,8 +3,8 @@
  * Doubly Linked List, defines the template for lists.
  * Adapted from code developed for COS30008 - Data Structures and Patters
  * @author  J.P.Galovic
- * @version v1.1.2
- * @date    26-04-2018
+ * @version v1.2.0
+ * @date    10-05-2018
  */
 
 #include "ListNodeIterator.h"
@@ -39,6 +39,8 @@ namespace Container
 		int size() const;
 		int count() const;
 		int length() const;
+
+		bool hasValue(const T& aElement) const;
 
 		const T& getAt(unsigned int aIndex) const;
 		const T& operator[](unsigned int aIndex) const;
@@ -93,8 +95,8 @@ namespace Container
 	template<class T>
 	inline List<T>::List()
 	{
-		fTop = nullptr;
-		fLast = nullptr;
+		fTop = &ListNode<T>::NIL;
+		fLast = &ListNode<T>::NIL;
 		fCount = 0;
 	}
 
@@ -105,8 +107,8 @@ namespace Container
 	template<class T>
 	inline List<T>::List(const List<T>& aOtherList)
 	{
-		fTop = nullptr;
-		fLast = nullptr;
+		fTop = &ListNode<T>::NIL;
+		fLast = &ListNode<T>::NIL;
 		fCount = 0;
 
 		for (ListNodeIterator<T> iter = aOtherList.getIterator().first(); iter != iter.rightEnd(); iter++)
@@ -119,7 +121,7 @@ namespace Container
 	template<class T>
 	inline List<T>::~List()
 	{
-		while (fTop != nullptr)
+		while (fTop != &ListNode<T>::NIL)
 		{
 			ListNode<T>* lTemp = (ListNode<T>*) &fTop->getNext();
 			fTop->remove();
@@ -137,7 +139,7 @@ namespace Container
 	{
 		if (&aOtherList != this)
 		{
-			while (fTop != nullptr)
+			while (fTop != &ListNode<T>::NIL)
 			{
 				ListNode<T>* lTemp = (ListNode<T>*) &fTop->getNext();
 				fTop->remove();
@@ -145,8 +147,8 @@ namespace Container
 				fTop = lTemp;
 			}
 
-			fTop = nullptr;
-			fLast = nullptr;
+			fTop = &ListNode<T>::NIL;
+			fLast = &ListNode<T>::NIL;
 			fCount = 0;
 
 			for (ListNodeIterator<T> iter = aOtherList.getIterator().first(); iter != iter.rightEnd(); iter++)
@@ -162,7 +164,7 @@ namespace Container
 	 */
 	inline bool List<T>::isEmpty() const
 	{
-		return fTop == nullptr;
+		return fTop == &ListNode<T>::NIL;
 	}
 
 	/**
@@ -203,6 +205,16 @@ namespace Container
 	inline int List<T>::length() const
 	{
 		return size();
+	}
+
+	template<class T>
+	inline bool List<T>::hasValue(const T & aElement) const
+	{
+		if (!isEmpty())
+			for (ListNodeIterator<T> lIter = getIterator(); lIter != lIter.rightEnd(); lIter++)
+				if (*lIter == aElement)
+					return true;
+		return false;
 	}
 
 	/**
@@ -266,7 +278,7 @@ namespace Container
 	{
 		ListNode<T>* lNewElement = new ListNode<T>(aElement);
 
-		if (fTop == nullptr)
+		if (fTop == &ListNode<T>::NIL)
 		{
 			fTop = lNewElement;
 			fLast = lNewElement;
@@ -289,7 +301,7 @@ namespace Container
 	{
 		ListNode<T>* lNewElement = new ListNode<T>(aElement);
 
-		if (fTop == nullptr)
+		if (fTop == &ListNode<T>::NIL)
 		{
 			fTop = lNewElement;
 			fLast = lNewElement;
@@ -322,14 +334,14 @@ namespace Container
 	{
 		ListNode<T>* lNode = fTop;
 
-		while (lNode != nullptr)
+		while (lNode != &ListNode<T>::NIL)
 		{
 			if (lNode->getValue() == aElement)
 				break;
 			lNode = (ListNode<T>*)&lNode->getNext();
 		}
 
-		if (lNode != nullptr)
+		if (lNode != &ListNode<T>::NIL)
 		{
 			if (lNode == fTop)
 				fTop = (ListNode<T>*)&lNode->getNext();

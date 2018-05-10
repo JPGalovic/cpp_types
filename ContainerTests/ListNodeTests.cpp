@@ -7,6 +7,8 @@
 #include "ListNode.h"
 #include "Misc.h"
 
+using Container::ListNode;
+
 /** 
  * Tests Append List Item
  */
@@ -43,7 +45,7 @@ void ListNodeTests::testAppend(bool aClearFlag, bool aPauseFlag)
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display Nodes:" << std::endl;
 
-	for (const StringNode* PN = &N1; PN != nullptr; PN = &PN->getNext())
+	for (const StringNode* PN = &N1; PN != &ListNode<std::string>::NIL; PN = &PN->getNext())
 			std::cout << *PN << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
@@ -82,7 +84,7 @@ void ListNodeTests::testPrepend(bool aClearFlag, bool aPauseFlag)
 	SetConsoleTextAttribute(hConsole, 11);
 	std::cout << "Display Nodes:" << std::endl;
 
-	for (const StringNode* PN = &N1; PN != nullptr; PN = &PN->getNext())
+	for (const StringNode* PN = &N1; PN != &ListNode<std::string>::NIL; PN = &PN->getNext())
 		std::cout << *PN << std::endl;
 
 	TestSuite::EndTest(aPauseFlag);
